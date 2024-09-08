@@ -138,14 +138,17 @@ const CommunityCard = styled(ArtCard)`
 `;
 
 function Left(props) {
-	// let photoUrl = props.user.photoURL ? props.user.photoURL : "/images/photo.svg";
+	if (props.user) {
+		var photoUrl = props.user.photoURL ? props.user.photoURL : "/images/photo.svg";
+		console.log("aman", photoUrl);
+  }
 	return (
 		<Container>
 			<ArtCard>
 				<UserInfo>
 					<CardBackground />
 					<a>
-						{/* <Photo photoUrl={photoUrl} /> */}
+					    <Photo photoUrl={photoUrl} /> 
 						<Link>Welcome, {props.user ? props.user.displayName : "there"}!</Link>
 					</a>
 					<a>
